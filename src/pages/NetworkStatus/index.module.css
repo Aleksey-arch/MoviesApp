@@ -1,0 +1,12 @@
+.containerOffline {
+    width: 500px;
+    height: 150px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    border: 1px solid #e8e7e7;
+    background: #fbfbfb;
+    display: flex;
+    gap: 1rem;
+    margin: 10% auto 0 auto;
+}
