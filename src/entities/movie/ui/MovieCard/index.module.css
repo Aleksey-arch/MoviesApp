@@ -1,0 +1,89 @@
+.card {
+    width: 451px;
+    height: 279px;
+    border-radius: 0;
+    box-shadow: 5px 5px 5px #e2e2e2;
+}
+
+.cardContainer {
+    display: flex;
+}
+
+.cardImage {
+
+}
+
+.cardInfo {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    max-width: 271px;
+    padding: 10px 20px;
+}
+
+.cardTitle {
+    max-width: 200px;
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0 0 7px 0;
+    line-height: 120%;
+}
+
+.date {
+    color: #827E7E;
+    margin-top: 7px;
+    margin-bottom: 9px;
+}
+
+.containerTag {
+    padding: 2px 4px;
+    align-items: center;
+}
+
+.wrapperTags {
+    height: 27px;
+    overflow: hidden;
+}
+
+.cardParagraph {
+    font-size: 12px;
+    margin: 0;
+    margin-top: 10px;
+    white-space: wrap;
+}
+
+/*width: 230px;*/
+/*height: 130px;*/
+/*font-size: 12px;*/
+/*margin: 0;*/
+/*margin-top: 10px;*/
+/*overflow: hidden;*/
+/*text-overflow: ellipsis;*/
+
+.containerDescription {
+    height: 120px;
+    width: 230px;
+
+}
+
+.estimation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid #E9D100;
+    font-size: 12px;
+}
+
+.rate {
+    position: absolute;
+    font-size: 16px;
+    bottom: 10px;
+}
+
+

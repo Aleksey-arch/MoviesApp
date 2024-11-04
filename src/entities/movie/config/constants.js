@@ -1,0 +1,2 @@
+// prettier-ignore
+export const API_KEY = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhMTUzZjAxNjJhZjM1MTkyYWIyNTE0MWRlMWUzYTYyYiIsIm5iZiI6MTczMDEwMTAwNi42NDIwNCwic3ViIjoiNjcxZGVhMGZjNzgwMmNjNTAzNWE1MmU5Iiwic2NvcGVzIjpbImFwaV9yZWFkIl0sInZlcnNpb24iOjF9.hhHs_2H6QVHx0N-8ST85SMeFe7iWk_nCyEEFt1pc1BM';
