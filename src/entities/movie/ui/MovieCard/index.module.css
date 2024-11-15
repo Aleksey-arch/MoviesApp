@@ -1,56 +1,56 @@
 .card {
-    width: 451px;
-    height: auto;
-    border-radius: 0;
-    box-shadow: 5px 5px 5px #e2e2e2;
+  width: 451px;
+  height: auto;
+  border-radius: 0;
+  box-shadow: 5px 5px 5px #e2e2e2;
 }
 
 .cardContainer {
-    display: flex;
+  display: flex;
 }
 
 .cardImage {
 }
 
 .cardInfo {
-    position: relative;
-    width: 371px;
-    box-sizing: border-box;
-    max-width: 271px;
-    padding: 10px 20px;
+  position: relative;
+  width: 371px;
+  box-sizing: border-box;
+  max-width: 271px;
+  padding: 10px 20px;
 }
 
 .cardTitle {
-    max-width: 200px;
-    font-size: 16px;
-    font-weight: 500;
-    margin: 0 0 7px 0;
-    line-height: 120%;
+  max-width: 200px;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0 0 7px 0;
+  line-height: 120%;
 }
 
 .date {
-    color: #827e7e;
-    margin-top: 7px;
-    margin-bottom: 9px;
+  color: #827e7e;
+  margin-top: 7px;
+  margin-bottom: 9px;
 }
 
 .containerTag {
-    padding: 2px 4px;
-    align-items: center;
+  padding: 2px 4px;
+  align-items: center;
 }
 
 .wrapperTags {
-    height: 27px;
-    overflow: hidden;
+  height: 27px;
+  overflow: hidden;
 }
 
 .cardParagraph {
-    position: relative;
-    width: 100%;
-    font-size: 12px;
-    margin: 0;
-    margin-top: 10px;
-    white-space: wrap;
+  position: relative;
+  width: 100%;
+  font-size: 12px;
+  margin: 0;
+  margin-top: 10px;
+  white-space: wrap;
 }
 
 /*width: 230px;*/
@@ -62,64 +62,63 @@
 /*text-overflow: ellipsis;*/
 
 .containerDescription {
-    height: 120px;
-    width: 230px;
+  height: 120px;
+  width: 230px;
 }
 
 .estimation {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    border: 2px solid #e9d100;
-    font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid #e9d100;
+  font-size: 12px;
 }
 
 .rate {
-    position: absolute;
-    font-size: 16px;
-    bottom: 10px;
+  position: absolute;
+  font-size: 16px;
+  bottom: 10px;
 }
 
 .green-border {
-    border: 2px solid #66E900;
+  border: 2px solid #66e900;
 }
 
 .yelow-border {
-    border: 2px solid #E9D100;
+  border: 2px solid #e9d100;
 }
 
 .orange-border {
-    border: 2px solid #E97E00;
+  border: 2px solid #e97e00;
 }
 
 .red-border {
-    border: 2px solid #E90000;
+  border: 2px solid #e90000;
 }
 
 @media (max-width: 468px) {
-    .card {
-        width: 100%;
-        height: auto;
-    }
+  .card {
+    width: 100%;
+    height: auto;
+  }
 
-    .cardInfo {
-        width: 100%;
-        min-height: 270px;
-        padding: 5px 7px;
-    }
+  .cardInfo {
+    width: 100%;
+    min-height: 270px;
+    padding: 5px 7px;
+  }
 
-    .cardParagraph {
-        width: auto;
-    }
+  .cardParagraph {
+    width: auto;
+  }
 
-    .cardImage {
-        min-width: 100px;
-    }
-
+  .cardImage {
+    min-width: 100px;
+  }
 }
