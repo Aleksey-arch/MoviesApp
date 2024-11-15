@@ -147,15 +147,17 @@ export function MainPage() {
                 <div className={classes.containerItems}>{movieItem}</div>
 
                 {pageNumber === '1' ? (
-                  <Pagination
-                    align="center"
-                    total={totalPage}
-                    showSizeChanger={false}
-                    onChange={(e) => {
-                      setPaginationNumber(e);
-                    }}
-                    current={paginationNumber}
-                  />
+                  <div className={classes.pagination}>
+                    <Pagination
+                      align="center"
+                      total={totalPage}
+                      showSizeChanger={false}
+                      onChange={(e) => {
+                        setPaginationNumber(e);
+                      }}
+                      current={paginationNumber}
+                    />
+                  </div>
                 ) : null}
               </>
             )}
