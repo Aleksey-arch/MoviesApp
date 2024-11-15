@@ -1,3 +1,0 @@
-# MoviesApp
-
-# MoviesApp
