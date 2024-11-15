@@ -115,7 +115,6 @@ export function MainPage() {
   const onChangeTabsRating = (key) => {
     setTimeInterval(key);
   };
-
   const movieItem = movies.map((movie) => {
     return <MovieCard key={movie.id} data={movie} localStorageData={localStorageData} />;
   });
