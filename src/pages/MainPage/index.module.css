@@ -1,5 +1,5 @@
 .containerPage {
-    width: 985px;
+    max-width: 985px;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -34,34 +34,27 @@
     right: 10px;
 }
 
-/*.containerList {*/
-/*    display: flex;*/
-/*    gap: 10px;*/
-/*    align-items: center;*/
-/*    justify-content: center;*/
-/*    width: 938px;*/
-/*    margin: 0 auto;*/
-/*}*/
+@media (max-width: 999px) {
+    .containerItems {
+        gap: 16px;
+    }
+}
 
-/*.list {*/
-/*    display: flex;*/
-/*    gap: 90px;*/
-/*}*/
+@media (max-width: 934px) {
+    .containerItems {
+        display: grid;
+        grid-template-columns: 1fr;
+        margin-bottom: 36px;
+    }
 
-/*.containerItem {*/
-/*    display: flex;*/
-/*    justify-content: space-between;*/
-/*    margin-bottom: 36px;*/
-/*}*/
+}
 
-/*.list .containerItem:nth-child(2) {*/
-/*    margin-right: 36px;*/
-/*    margin-bottom: 36px;*/
-/*}*/
-
-/*.containerItem:nth-child(n+2) {*/
-/*    margin-right: 0;*/
-/*}*/
+@media (max-width: 600px) {
+    .containerItems {
+        gap: 13px;
+        margin: 0 1px;
+    }
 
 
+}
 

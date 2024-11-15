@@ -1,6 +1,6 @@
 .card {
     width: 451px;
-    height: 279px;
+    height: auto;
     border-radius: 0;
     box-shadow: 5px 5px 5px #e2e2e2;
 }
@@ -10,12 +10,11 @@
 }
 
 .cardImage {
-
 }
 
 .cardInfo {
     position: relative;
-    width: 100%;
+    width: 371px;
     box-sizing: border-box;
     max-width: 271px;
     padding: 10px 20px;
@@ -23,14 +22,14 @@
 
 .cardTitle {
     max-width: 200px;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 500;
     margin: 0 0 7px 0;
     line-height: 120%;
 }
 
 .date {
-    color: #827E7E;
+    color: #827e7e;
     margin-top: 7px;
     margin-bottom: 9px;
 }
@@ -46,6 +45,8 @@
 }
 
 .cardParagraph {
+    position: relative;
+    width: 100%;
     font-size: 12px;
     margin: 0;
     margin-top: 10px;
@@ -63,7 +64,6 @@
 .containerDescription {
     height: 120px;
     width: 230px;
-
 }
 
 .estimation {
@@ -76,7 +76,7 @@
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    border: 2px solid #E9D100;
+    border: 2px solid #e9d100;
     font-size: 12px;
 }
 
@@ -86,4 +86,40 @@
     bottom: 10px;
 }
 
+.green-border {
+    border: 2px solid #66E900;
+}
 
+.yelow-border {
+    border: 2px solid #E9D100;
+}
+
+.orange-border {
+    border: 2px solid #E97E00;
+}
+
+.red-border {
+    border: 2px solid #E90000;
+}
+
+@media (max-width: 468px) {
+    .card {
+        width: 100%;
+        height: auto;
+    }
+
+    .cardInfo {
+        width: 100%;
+        min-height: 270px;
+        padding: 5px 7px;
+    }
+
+    .cardParagraph {
+        width: auto;
+    }
+
+    .cardImage {
+        min-width: 100px;
+    }
+
+}

@@ -1,25 +1,30 @@
 import { Card, Image, Typography, ConfigProvider, Tag, Flex, Rate } from 'antd';
 import { format } from 'date-fns';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { ru } from 'date-fns/locale';
 import { getGenres } from '../../api/getGenres';
 import classes from './index.module.css';
+import MyContext from '../../MyContext';
+import { useResize } from '../../useResize/useResize';
 
 const { Title } = Typography;
 
 export function MovieCard({ data }) {
   const [arrGenres, setArrGenres] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [starValue, setStarValue] = useState(0);
+  const { localStorageData, setLocalStorageData } = useContext(MyContext);
+  const objectDataNew = {
+    ...data
+  };
 
   const {
     title,
     id,
     overview: description,
-    genre_ids: arrIdGenres,
     poster_path: cardImage,
-    vote_average: rating,
-    release_date: releeseDate
-  } = data;
+    vote_average: rating
+  } = objectDataNew;
 
   useEffect(() => {
     const fetchGenres = async () => {
@@ -34,8 +39,44 @@ export function MovieCard({ data }) {
       }
     };
 
+    if (localStorageData.length !== 0) {
+      const indexElem = localStorageData.findIndex((item) => {
+        return item.id === id;
+      });
+      if (indexElem !== -1 && !('newValueRated' in data)) {
+        objectDataNew.newValueRated = localStorageData[indexElem].newValue;
+      }
+    }
+    setStarValue('newValueRated' in objectDataNew ? objectDataNew.newValueRated : starValue);
     fetchGenres();
   }, [id]);
+
+  const valueChangeHandler = (newValue) => {
+    if (newValue === 0) {
+      localStorage.removeItem(id);
+      setStarValue(0);
+    } else {
+      localStorage.setItem(
+        id,
+        JSON.stringify({
+          id,
+          newValue
+        })
+      );
+      setStarValue(newValue);
+    }
+  };
+
+  let colorRating = ' ';
+  if (rating >= 7) {
+    colorRating = classes['green-border'];
+  } else if (rating >= 5) {
+    colorRating = classes['yelow-border'];
+  } else if (rating >= 3) {
+    colorRating = classes['orange-border'];
+  } else {
+    colorRating = classes['red-border'];
+  }
 
   const itemTag = arrGenres.map((item) => {
     return (
@@ -56,6 +97,13 @@ export function MovieCard({ data }) {
     }
     return desc;
   };
+
+  const releaseDate = data?.release_date
+    ? format(data.release_date, 'dd MMMM , yyyy', {
+        locale: ru
+      })
+    : 'нет даты';
+
   return (
     <ConfigProvider
       theme={{
@@ -67,20 +115,17 @@ export function MovieCard({ data }) {
       <Card className={classes.card}>
         <div className={classes.cardContainer}>
           <Image
-            width={183}
-            height={277}
+            width="100%"
+            height="100%"
             className={classes.cardImage}
-            src={`https://image.tmdb.org/t/p/original/${cardImage}`}
+            src={`https://image.tmdb.org/t/p/original${cardImage}`}
+            fallback={`https://via.placeholder.com/500x715/e2e2e2/black/?text=${title.split(' ').join('+')}&font=oswald.png`}
             alt="Not image"
           />
 
           <div className={classes.cardInfo}>
             <h1 className={classes.cardTitle}>{title}</h1>
-            <p className={classes.date}>
-              {format(new Date(releeseDate), 'dd MMMM, yyyy', {
-                locale: ru
-              })}
-            </p>
+            <p className={classes.date}>{releaseDate}</p>
             <div className={classes.wrapperTags}>
               <Flex wrap="wrap" gap="8px 0">
                 {itemTag}
@@ -90,8 +135,17 @@ export function MovieCard({ data }) {
             <div className={classes.containerDescription}>
               <p className={classes.cardParagraph}>{lengthDescription(description)}</p>
             </div>
-            <div className={classes.estimation}>{rating.toFixed(1)}</div>
-            <Rate count={10} defaultValue={5} rootClassName={classes.rate} />
+            <div className={[classes.estimation, colorRating].join(' ')}>{rating.toFixed(1)}</div>
+            <Rate
+              value={starValue}
+              onChange={(e) => {
+                valueChangeHandler(e);
+              }}
+              allowHalf
+              count={10}
+              allowClear
+              rootClassName={classes.rate}
+            />
           </div>
         </div>
       </Card>

@@ -18,6 +18,10 @@ export function TabsRating({ onChangeTabsRating, timeInterval }) {
         {
           label: 'Топ за неделю',
           key: 'week'
+        },
+        {
+          label: 'Мои оценки',
+          key: 'rated'
         }
       ]}
     />

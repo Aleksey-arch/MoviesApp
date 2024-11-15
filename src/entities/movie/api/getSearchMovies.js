@@ -1,6 +1,6 @@
 import { API_KEY } from '../config/constants';
 
-export const getSearchMovies = async (query, paginationPage = 1) => {
+export const getSearchMovies = async (query, paginationPage) => {
   try {
     const response = await fetch(
       `https://api.themoviedb.org/3/search/movie?query=${query}&include_adult=true&language=ru-RU&page=${paginationPage}`,
