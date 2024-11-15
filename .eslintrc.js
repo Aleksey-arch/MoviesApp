@@ -21,6 +21,7 @@ module.exports = {
   },
   plugins: ['react'],
   rules: {
+    'linebreak-style': ['warn', 'unix'],
     'operator-linebreak': ['warn', 'after'],
     indent: ['off', 2],
     'import/prefer-default-export': 'off', // Отключено
