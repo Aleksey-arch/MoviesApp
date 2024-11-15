@@ -6,8 +6,5 @@
     "main.829748f4.css.map": "/movies-app/static/css/main.829748f4.css.map",
     "main.d21cf354.js.map": "/movies-app/static/js/main.d21cf354.js.map"
   },
-  "entrypoints": [
-    "static/css/main.829748f4.css",
-    "static/js/main.d21cf354.js"
-  ]
+  "entrypoints": ["static/css/main.829748f4.css", "static/js/main.d21cf354.js"]
 }
