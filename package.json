@@ -1,6 +1,7 @@
 {
   "name": "movies-app",
   "version": "0.1.0",
+  "homepage": "https://Aleksey-arch.github.io/movies-app",
   "private": true,
   "dependencies": {
     "@ant-design/icons": "^5.5.1",
